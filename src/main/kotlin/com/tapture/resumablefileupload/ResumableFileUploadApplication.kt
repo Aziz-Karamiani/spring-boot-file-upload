@@ -13,7 +13,7 @@ class ResumableFileUploadApplication: CommandLineRunner {
 
     override fun run(vararg args: String?) {
         uploadFileService.init()
-            .onFailure { throw RuntimeException("System cannot start up because no uploads folder is set up") }
+            .onFailure { throw RuntimeException("System cannot start up because no uploads folder is setup") }
     }
 }
 

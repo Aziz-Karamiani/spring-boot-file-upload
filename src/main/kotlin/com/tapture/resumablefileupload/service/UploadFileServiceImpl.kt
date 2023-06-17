@@ -34,7 +34,7 @@ class UploadFileServiceImpl : UploadFileService {
         runCatching {
             log.debug { "uploading file ${file.originalFilename} to ${uploadsFolderPath.fileName} folder" }
 
-            val uploadedTargetFilePath = uploadsFolderPath.resolve(file.originalFilename);
+            val uploadedTargetFilePath = uploadsFolderPath.resolve(file.originalFilename!!);
             Files.copy(file.inputStream, uploadedTargetFilePath)
             uploadedTargetFilePath.isRegularFile()
         }.onFailure {

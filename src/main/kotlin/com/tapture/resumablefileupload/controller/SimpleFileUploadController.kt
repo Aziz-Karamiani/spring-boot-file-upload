@@ -24,7 +24,7 @@ class UploadFileController {
 
 
     // 2) We define the HTTP Post operation with the file as parameter
-    @PostMapping("/upload-file")
+    @PostMapping("/upload")
     fun uploadFile(@RequestParam("file") file: MultipartFile): ResponseEntity<Response> {
 
         log.info { "Requested uploading file: ${file.originalFilename}" }
